@@ -1,0 +1,333 @@
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+.heading h2.headingTitle {
+  display: flex;
+}
+.heading h2.headingTitle::before, .heading h2.headingTitle::after {
+  content: "";
+  display: block;
+  flex: 100;
+  border-bottom: 5px solid #292e38;
+  transform: translateY(-18px);
+}
+.heading h2.headingTitle::before {
+  flex: 30px;
+  width: 30px;
+  min-width: 20px;
+}
+.heading h2 span {
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+.heading h2 span span {
+  padding: 0;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+.header .navbar {
+  padding: 20px 0;
+  background-image: none;
+}
+.header .navbar .navbar-brand {
+  width: 160px;
+}
+.header .navbar .navbar-brand img {
+  width: 100%;
+}
+.header .navbar .navbar-nav .nav-link {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.header.fixed {
+  width: 100%;
+  position: fixed !important;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+}
+.header.fixed .navbar {
+  padding: 12px 0;
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+.how-to-play .steps ul {
+  padding-left: 20px !important;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+.privacyPolicy ul {
+  padding-left: 20px !important;
+  list-style-type: auto;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 110px 0 50px !important;
+}
+
+@media (max-width: 767px) {
+  .all-section {
+    padding: 80px 0 30px !important;
+  }
+}
+.footer .footerLogo {
+  width: 160px;
+}
+.footer .supportLink ul li {
+  letter-spacing: 1px;
+}
+.footer .supportLink ul li a {
+  transition: 0.3s;
+}
+.footer .supportLink ul li a:hover {
+  color: #dd163b !important;
+  transition: 0.3s;
+}
+.footer .links .link ul li a {
+  transition: 0.3s;
+}
+.footer .links .link ul li a:hover {
+  margin-left: 6px;
+  transition: 0.3s;
+  color: #dd163b !important;
+}
+.footer .links .sociallink ul li a {
+  transition: 0.3s;
+}
+.footer .links .sociallink ul li:nth-child(1) a:hover {
+  background-color: #4267b2 !important;
+  transition: 0.3s;
+}
+.footer .links .sociallink ul li:nth-child(2) a:hover {
+  background-color: #1da1f2 !important;
+  transition: 0.3s;
+}
+.footer .links .sociallink ul li:nth-child(3) a:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  transition: 0.3s;
+}
+.footer .links .sociallink ul li:nth-child(4) a:hover {
+  background-color: #0077b5 !important;
+  transition: 0.3s;
+}
+
+@media (max-width: 420px) {
+  .copyright .copyright-text {
+    display: block !important;
+  }
+  .copyright .copyright-text a {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+@media (max-width: 991.98px) {
+  .header .navbar .navbar-brand {
+    width: 130px;
+  }
+  .header .navbar .navbar-brand img {
+    width: 100%;
+  }
+  .header .navbar .navbar-nav .nav-link {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 10px;
+  }
+  .header .fixed {
+    width: 100%;
+    position: fixed !important;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+  }
+  .header .fixed .navbar {
+    padding: 12px 0;
+    transition: 0.3s;
+  }
+}
+@media (max-width: 767.98px) {
+  .heading h2.headingTitle::before, .heading h2.headingTitle::after {
+    transform: translateY(-10px);
+  }
+  .heading h2.headingTitle::before {
+    flex: 30px;
+  }
+  .heading h2 span {
+    padding: 0 12px;
+  }
+}/*# sourceMappingURL=style.min.css.map */

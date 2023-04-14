@@ -1,0 +1,1476 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "main";
+
+body {
+  background-color: $theme2;
+}
+
+// heroSection
+.heroSection {
+  width: 100%;
+  background-image: url(../../img/hero/bg1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  display: flex;
+  & .sliderOuter {
+    overflow: hidden;
+    border-radius: 20px;
+    & .sliderimg {
+      width: 100%;
+      height: 400px;
+      & img {
+        width: auto;
+        object-fit: cover;
+        height: 100%;
+        margin: 0 auto;
+      }
+    }
+    & .gameDetail {
+      height: 100%;
+      & .content {
+        overflow: auto;
+        height: 270px;
+      }
+    }
+    & .animation-container {
+      width: 800px;
+      max-width: 100%;
+      .lightning-container {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        .lightning {
+          height: 12px;
+          width: 12px;
+          border-radius: 12px;
+          transform-origin: 6px 6px;
+          animation-name: woosh;
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          animation-direction: alternate;
+          &.white {
+            background-color: white;
+            box-shadow: 0px 50px 50px 0px transparentize(white, 0.7);
+          }
+          &.red {
+            background-color: $theme1;
+            box-shadow: 0px 50px 50px 0px transparentize($theme1, 0.7);
+            animation-delay: 0.2s;
+          }
+        }
+      }
+      .boom-container {
+        position: absolute;
+        display: flex;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        align-items: center;
+        transform: translateY(-50%);
+        left: 200px;
+        top: -145px;
+        .shape {
+          display: inline-block;
+          position: relative;
+          opacity: 0;
+          transform-origin: center center;
+          &.triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            transform-origin: 50% 80%;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+            margin-left: -15px;
+            border-width: 0 2.5px 5px 2.5px;
+            border-color: transparent transparent #42e599 transparent;
+            animation-name: boom-triangle;
+            &.big {
+              margin-left: -25px;
+              border-width: 0 5px 10px 5px;
+              border-color: transparent transparent #fade28 transparent;
+              animation-name: boom-triangle-big;
+            }
+          }
+          &.disc {
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background-color: $theme1;
+            animation-name: boom-disc;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+          }
+          &.circle {
+            width: 20px;
+            height: 20px;
+            animation-name: boom-circle;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+            border-radius: 100%;
+            margin-left: -30px;
+            &.white {
+              border: 1px solid white;
+            }
+            &.big {
+              width: 40px;
+              height: 40px;
+              margin-left: 0px;
+
+              &.white {
+                border: 2px solid white;
+              }
+            }
+          }
+          &:after {
+            background-color: rgba(178, 215, 232, 0.2);
+          }
+        }
+        .shape {
+          &.triangle,
+          &.circle,
+          &.circle.big,
+          &.disc {
+            animation-delay: 0.38s;
+            animation-duration: 3s;
+          }
+          &.circle {
+            animation-delay: 0.6s;
+          }
+        }
+        &.second {
+          left: 485px;
+          top: 155px;
+          .shape {
+            &.triangle,
+            &.circle,
+            &.circle.big,
+            &.disc {
+              animation-delay: 1.9s;
+            }
+            &.circle {
+              animation-delay: 2.15s;
+            }
+          }
+        }
+      }
+    }
+    @keyframes woosh {
+      0% {
+        width: 12px;
+        transform: translate(0px, 0px) rotate(-35deg);
+      }
+      15% {
+        width: 50px;
+      }
+      30% {
+        width: 12px;
+        transform: translate(214px, -150px) rotate(-35deg);
+      }
+      30.1% {
+        transform: translate(214px, -150px) rotate(46deg);
+      }
+      50% {
+        width: 110px;
+      }
+      70% {
+        width: 12px;
+        transform: translate(500px, 150px) rotate(46deg);
+      }
+      70.1% {
+        transform: translate(500px, 150px) rotate(-37deg);
+      }
+      85% {
+        width: 50px;
+      }
+      100% {
+        width: 12px;
+        transform: translate(700px, 0) rotate(-37deg);
+      }
+    }
+    @keyframes boom-circle {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+        transform: scale(3);
+      }
+      100% {
+      }
+    }
+    @keyframes boom-triangle-big {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      40% {
+        opacity: 0;
+        transform: scale(2.5) translate(50px, -50px) rotate(360deg);
+      }
+      100% {
+      }
+    }
+    @keyframes boom-triangle {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 0;
+        transform: scale(3) translate(20px, 40px) rotate(360deg);
+      }
+
+      100% {
+      }
+    }
+    @keyframes boom-disc {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      40% {
+        opacity: 0;
+        transform: scale(2) translate(-70px, -30px);
+      }
+      100% {
+      }
+    }
+  }
+  & .owl-dots {
+    margin-top: 20px;
+    text-align: center;
+    & button.owl-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50px !important;
+      background: $theme3 !important;
+      border: 5px solid transparent;
+      margin: 0 10px;
+      transition: 0.3s;
+      &.active {
+        border-radius: 5px !important;
+        background: $theme3 !important;
+        border: 5px solid $theme1;
+        transform: rotate(45deg);
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin heroSection-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin heroSection-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin heroSection-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin heroSection-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin heroSection-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin heroSection-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin heroSection-mixin-max-sm() {
+  .heroSection {
+    height: unset;
+    padding: 80px 0 40px;
+    & .sliderOuter {
+      & .sliderimg {
+        height: 290px;
+        & img {
+        }
+      }
+      & .gameDetail {
+        & .content {
+          overflow: auto;
+          height: unset;
+        }
+      }
+    }
+    & .owl-dots {
+      & button.owl-dot {
+        width: 12px;
+        height: 12px;
+        &.active {
+          border: 2px solid $theme1;
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin heroSection-mixin-max-md() {
+  .heroSection {
+    height: 500px;
+    padding-bottom: 40px;
+    & .sliderOuter {
+      & .sliderimg {
+        height: 290px;
+        & img {
+        }
+      }
+      & .gameDetail {
+        & .content {
+          overflow: auto;
+          height: 170px;
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin heroSection-mixin-max-lg() {
+  .heroSection {
+    height: 620px;
+    & .sliderOuter {
+      & .sliderimg {
+        height: 350px;
+        & img {
+        }
+      }
+      & .gameDetail {
+        & .content {
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin heroSection-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin heroSection-mixin-max-xl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// downloadCategary
+.downloadCategary {
+  & .categaryOuter {
+    cursor: pointer;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+    //   background: linear-gradient(to right, transparent, #ffffff1f, transparent);
+    //   left: -100%;
+    //   transition: 0.8s;
+    //   bottom: 0;
+    //   z-index: 0;
+    //   padding: 0 12px;
+    // }
+    // &:hover {
+    //   overflow: hidden;
+    //   &::after {
+    //     left: 100%;
+    //   }
+    // }
+    & span {
+      letter-spacing: 2px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin downloadCategary-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin downloadCategary-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin downloadCategary-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin downloadCategary-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin downloadCategary-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin downloadCategary-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin downloadCategary-mixin-max-sm() {
+  .downloadCategary {
+    & .categaryOuter {
+      & span {
+        letter-spacing: normal;
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin downloadCategary-mixin-max-md() {
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin downloadCategary-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin downloadCategary-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin downloadCategary-mixin-max-xl() {
+}
+
+@media (max-width: 480px) {
+  .downloadCategary {
+    & .col-4 {
+      width: 70%;
+      margin: 0 auto;
+    }
+    & .categaryOuter {
+      & span {
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  .downloadCategary {
+    & .col-4 {
+      width: 100%;
+    }
+    & .categaryOuter {
+      & span {
+      }
+    }
+  }
+}
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// about us
+.aboutus {
+  padding-top: 80px !important;
+  & .card {
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.3s;
+      & .aboutImg {
+        // background-color: $theme3;
+        transform: scale(1.04);
+        transition: 0.3s;
+      }
+    }
+    & .aboutImg {
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      & img {
+        width: 100%;
+        display: block !important;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin aboutus-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin aboutus-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin aboutus-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin aboutus-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin aboutus-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin aboutus-mixin-max-xs() {
+  .aboutus {
+    padding-top: 30px !important;
+    & .card {
+      &:hover {
+        & .aboutImg {
+        }
+      }
+      & .aboutImg {
+        & img {
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin aboutus-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin aboutus-mixin-max-md() {
+  .aboutus {
+    padding-top: 50px !important;
+    & .card {
+      &:hover {
+        & .aboutImg {
+        }
+      }
+      & .aboutImg {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        & img {
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin aboutus-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin aboutus-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin aboutus-mixin-max-xl() {
+}
+@media (max-width: 360px) {
+  .aboutus {
+    & .card {
+      & .col-auto {
+        width: 100%;
+      }
+      & .aboutContent {
+        text-align: center !important;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// howToPlay
+.howToPlay {
+  padding-top: 80px !important;
+  & .howPlay {
+    & .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+      color: #495057;
+      background-color: $theme1 !important;
+      border-color: transparent;
+      border: none;
+    }
+    & .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link:focus {
+      border-color: transparent;
+      border: none;
+    }
+    & .tabItem {
+      & p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    & .howPlayImg {
+      height: 394px;
+      transition: 0.3s;
+      overflow: hidden;
+      & img {
+        width: auto;
+        object-fit: cover;
+        height: 100%;
+        transition: 0.3s;
+      }
+      &:hover {
+        & img {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin howToPlay-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin howToPlay-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin howToPlay-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin howToPlay-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin howToPlay-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin howToPlay-mixin-max-xs() {
+  .howToPlay {
+    padding-top: 30px !important;
+    & .howPlay {
+      & .nav-tabs .nav-link.active,
+      .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-item.show .nav-link {
+      }
+      & .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-link:focus {
+      }
+      & .tabItem {
+        & p {
+        }
+      }
+      & .howPlayImg {
+        & img {
+        }
+        &:hover {
+          & img {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin howToPlay-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin howToPlay-mixin-max-md() {
+  .howToPlay {
+    padding-top: 50px !important;
+    & .howPlay {
+      & .nav-tabs .nav-link.active,
+      .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-item.show .nav-link {
+        background-color: $theme1 !important;
+      }
+      & .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-link:focus {
+      }
+      & .tabItem {
+        & p {
+          white-space: unset;
+        }
+      }
+      & .howPlayImg {
+        & img {
+        }
+        &:hover {
+          & img {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin howToPlay-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin howToPlay-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin howToPlay-mixin-max-xl() {
+}
+
+@media (max-width: 360px) {
+  .howToPlay {
+    & .howPlay {
+      & .nav-tabs .nav-link.active,
+      .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-item.show .nav-link {
+      }
+      & .nav-tabs .nav-link:hover,
+      .nav-tabs .nav-link:focus {
+      }
+      & .col-auto {
+        width: 100%;
+        justify-content: center;
+      }
+      & .col {
+        margin-top: 12px;
+        width: 100%;
+        text-align: center;
+      }
+      & .tabItem {
+        & p {
+        }
+      }
+      & .howPlayImg {
+        & img {
+        }
+        &:hover {
+          & img {
+          }
+        }
+      }
+    }
+  }
+}
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+//testimonial
+.clientTestimonial {
+  height: 480px;
+  padding-top: 80px !important;
+  position: relative;
+  & .testimonilaSlider {
+    & .owl-item.cloned,
+    & .owl-item.cloned.active,
+    & .owl-item {
+      filter: opacity(0.3);
+    }
+    & .owl-item.active.center {
+      filter: opacity(1);
+      & .testimonialOuter {
+        transition: 0.5s;
+        & .clienDetail {
+          transition: 0.5s;
+          & .clientimg {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid $theme1;
+            margin: auto;
+            transition: 0.5s;
+            & img {
+            }
+          }
+        }
+        & .testimonialBody {
+          & .quote,
+          .quote1 {
+            & i {
+              color: $theme1 !important;
+            }
+          }
+        }
+      }
+    }
+    & .testimonialOuter {
+      transition: 0.5s;
+      // height: 334px;
+      & .clienDetail {
+        transition: 0.5s;
+        & .clientimg {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 5px solid $theme3;
+          margin: auto;
+          transition: 0.5s;
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  & .owl-nav {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    & .owl-prev,
+    & .owl-next {
+      color: #aaaaaa !important;
+      position: absolute;
+      transition: 0.3s;
+      &:hover {
+        color: #ffffff !important;
+        transition: 0.3s;
+        &.owl-prev {
+          left: 15px !important;
+          transition: 0.3s;
+        }
+        &.owl-next {
+          transition: 0.3s;
+          right: 15px !important;
+          transition: 0.3s;
+        }
+      }
+    }
+    & .owl-prev {
+      left: 20px;
+    }
+    & .owl-next {
+      right: 20px;
+    }
+  }
+  // & .owl-dots{
+  //   width: 100%;
+  //   text-align: center;
+  //   & .owl-dot{
+  //     width: 8px;
+  //     height: 8px;
+  //     background-color: $theme3;
+  //     border-radius: 50px;
+  //     transition:.3s;
+  //     margin: 0 4px;
+  //     &.active{
+  //       background-color: $theme1;
+  //       transition: .3s;
+  //       width: 20px;
+  //     }
+  //   }
+  // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin clientTestimonial-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin clientTestimonial-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin clientTestimonial-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin clientTestimonial-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin clientTestimonial-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin clientTestimonial-mixin-max-xs() {
+  .clientTestimonial {
+    padding-top: 50px !important;
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+      }
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              width: 50px;
+              height: 50px;
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & .quote {
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+            & img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin clientTestimonial-mixin-max-sm() {
+  .clientTestimonial {
+    height: 400px;
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+      }
+      & .owl-item.active.center {
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & .quote,
+            .quote1 {
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin clientTestimonial-mixin-max-md() {
+  .clientTestimonial {
+    height: 410px;
+    padding-top: 50px !important;
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+      }
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              width: 60px;
+              height: 60px;
+              border: 2px solid $theme1;
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & .quote {
+              & i {
+              }
+            }
+            & .quote1 {
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+            & img {
+            }
+          }
+        }
+      }
+    }
+    & .owl-nav {
+      bottom: 20px;
+      & .owl-prev,
+      & .owl-next {
+        &:hover {
+          & .owl-prev {
+          }
+          & .owl-next {
+          }
+        }
+      }
+      & .owl-prev {
+      }
+      & .owl-next {
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin clientTestimonial-mixin-max-lg() {
+  .clientTestimonial {
+    height: 510px;
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+      }
+      & .owl-item.active.center {
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & .quote,
+            .quote1 {
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin clientTestimonial-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin clientTestimonial-mixin-max-xl() {
+}
+
+@media (max-width: 420px) {
+  .clientTestimonial {
+    & .testimonilaSlider {
+      & .owl-item.cloned,
+      & .owl-item.cloned.active,
+      & .owl-item {
+        & .testimonialBody {
+          & p {
+            padding: 30px !important;
+            & i {
+            }
+          }
+          & .quote {
+            left: 10px !important;
+            top: 10px !important;
+            & i {
+            }
+          }
+          & .quote1 {
+            & i {
+            }
+          }
+        }
+      }
+      & .owl-item.active.center {
+        filter: opacity(1);
+        & .testimonialOuter {
+          & .clienDetail {
+            & .clientimg {
+              & img {
+              }
+            }
+          }
+          & .testimonialBody {
+            & p {
+              padding: 30px !important;
+              & i {
+              }
+            }
+            & .quote {
+              left: 10px !important;
+              top: 10px !important;
+              & i {
+              }
+            }
+            & .quote1 {
+              right: 10px !important;
+              bottom: 10px !important;
+              & i {
+              }
+            }
+          }
+        }
+      }
+      & .testimonialOuter {
+        & .clienDetail {
+          & .clientimg {
+            & img {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+//faq
+
+.faq {
+  padding-top: 80px !important;
+  .accordion-button {
+    &::after {
+      opacity: 0;
+      display: none;
+    }
+    &:not(.collapsed) {
+      &::after {
+        opacity: 0;
+        display: none;
+      }
+      & span {
+        &::after {
+        }
+        &::before {
+          transform: rotate(90deg);
+          transition: 0.3s;
+        }
+      }
+    }
+    & span {
+      margin-left: auto;
+      text-align: center;
+      &::after {
+        content: "";
+        width: 15px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        transform: translate(0px, -9px);
+      }
+      &::before {
+        content: "";
+        width: 3px;
+        height: 15px;
+        background-color: #fff;
+        display: block;
+        margin: 0 auto;
+        transition: 0.3s;
+      }
+    }
+  }
+  //   .accordion-button:not(.collapsed)::after {
+  //     background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c71435'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+  //     transform: rotate(-180deg);
+  // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin faq-mixin-min-sm() {
+}
+// Medium devices (tablets, 768px and up)
+@mixin faq-mixin-min-md() {
+}
+
+// Large devices (desktops, 992px and up)
+@mixin faq-mixin-min-lg() {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin faq-mixin-min-xl() {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin faq-mixin-min-xxl() {
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@mixin faq-mixin-max-xs() {
+}
+
+// Small devices (landscape phones, less than 768px)
+@mixin faq-mixin-max-sm() {
+}
+
+// Medium devices (tablets, less than 992px)
+@mixin faq-mixin-max-md() {
+  .faq {
+    padding-top: 50px !important;
+    .accordion-button {
+      &::after {
+      }
+      &:not(.collapsed) {
+        &::after {
+        }
+        & span {
+          &::after {
+          }
+          &::before {
+          }
+        }
+      }
+      & span {
+        &::after {
+        }
+        &::before {
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@mixin faq-mixin-max-lg() {
+}
+
+// Large devices (desktops, less than 1300px)
+@mixin faq-mixin-max-1300() {
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@mixin faq-mixin-max-xl() {
+}
+
+@media (max-width: 480px) {
+  .faq {
+    & .accordion {
+      padding: 16px !important;
+      & .accordion-button {
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+        &::after {
+        }
+        &:not(.collapsed) {
+          &::after {
+            opacity: 0;
+            display: none;
+          }
+          & span {
+            &::after {
+            }
+            &::before {
+            }
+          }
+        }
+        & span {
+          &::after {
+            width: 10px;
+            height: 2px;
+            transform: translate(0px, -6px);
+          }
+          &::before {
+            width: 2px;
+            height: 10px;
+          }
+        }
+      }
+      & .accordion-body {
+        padding: 10px 12px !important;
+      }
+    }
+  }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// // Small devices (landscape phones, 576px and up)
+// @mixin heroSection-mixin-min-sm() {
+// }
+// // Medium devices (tablets, 768px and up)
+// @mixin heroSection-mixin-min-md() {
+// }
+
+// // Large devices (desktops, 992px and up)
+// @mixin heroSection-mixin-min-lg() {
+// }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @mixin heroSection-mixin-min-xl() {
+// }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @mixin heroSection-mixin-min-xxl() {
+// }
+
+// // X-Small devices (portrait phones, less than 576px)
+// @mixin heroSection-mixin-max-xs() {
+// }
+
+// // Small devices (landscape phones, less than 768px)
+// @mixin heroSection-mixin-max-sm() {
+
+// }
+
+// // Medium devices (tablets, less than 992px)
+// @mixin heroSection-mixin-max-md() {
+
+// }
+
+// // Large devices (desktops, less than 1200px)
+// @mixin heroSection-mixin-max-lg() {
+
+// }
+
+// // Large devices (desktops, less than 1300px)
+// @mixin heroSection-mixin-max-1300() {
+// }
+
+// // X-Large devices (large desktops, less than 1400px)
+// @mixin heroSection-mixin-max-xl() {
+// }
+
+// // X-Small devices (portrait phones, less than 576px)
+// // No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  @include heroSection-mixin-min-sm();
+  @include downloadCategary-mixin-min-sm();
+  @include aboutus-mixin-min-sm();
+  @include howToPlay-mixin-min-sm();
+  @include clientTestimonial-mixin-min-sm();
+  @include faq-mixin-min-sm();
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  @include heroSection-mixin-min-md();
+  @include downloadCategary-mixin-min-md();
+  @include aboutus-mixin-min-md();
+  @include howToPlay-mixin-min-md();
+  @include clientTestimonial-mixin-min-md();
+  @include faq-mixin-min-md();
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  @include heroSection-mixin-min-lg();
+  @include downloadCategary-mixin-min-lg();
+  @include aboutus-mixin-min-lg();
+  @include howToPlay-mixin-min-lg();
+  @include clientTestimonial-mixin-min-lg();
+  @include faq-mixin-min-lg();
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  @include heroSection-mixin-min-xl();
+  @include downloadCategary-mixin-min-xl();
+  @include aboutus-mixin-min-xl();
+  @include howToPlay-mixin-min-xl();
+  @include clientTestimonial-mixin-min-xl();
+  @include faq-mixin-min-xl();
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  @include heroSection-mixin-min-xxl();
+  @include downloadCategary-mixin-min-xxl();
+  @include aboutus-mixin-min-xxl();
+  @include howToPlay-mixin-min-xxl();
+  @include clientTestimonial-mixin-min-xxl();
+  @include faq-mixin-min-xxl();
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) {
+  @include heroSection-mixin-max-xl();
+  @include downloadCategary-mixin-max-xl();
+  @include aboutus-mixin-max-xl();
+  @include howToPlay-mixin-max-xl();
+  @include clientTestimonial-mixin-max-xl();
+  @include faq-mixin-max-xl();
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  @include heroSection-mixin-max-lg();
+  @include downloadCategary-mixin-max-lg();
+  @include aboutus-mixin-max-lg();
+  @include howToPlay-mixin-max-lg();
+  @include clientTestimonial-mixin-max-lg();
+  @include faq-mixin-max-lg();
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  @include heroSection-mixin-max-md();
+  @include downloadCategary-mixin-max-md();
+  @include aboutus-mixin-max-md();
+  @include howToPlay-mixin-max-md();
+  @include clientTestimonial-mixin-max-md();
+  @include faq-mixin-max-md();
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  @include heroSection-mixin-max-sm();
+  @include downloadCategary-mixin-max-sm();
+  @include aboutus-mixin-max-sm();
+  @include howToPlay-mixin-max-sm();
+  @include clientTestimonial-mixin-max-sm();
+  @include faq-mixin-max-sm();
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  @include heroSection-mixin-max-xs();
+  @include downloadCategary-mixin-max-xs();
+  @include aboutus-mixin-max-xs();
+  @include howToPlay-mixin-max-xs();
+  @include clientTestimonial-mixin-max-xs();
+  @include faq-mixin-max-xs();
+}
+
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width

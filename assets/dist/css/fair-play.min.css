@@ -1,0 +1,20 @@
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dd163b;
+}
+
+body {
+  background-color: #181c23;
+}
+
+.all-section {
+  padding: 130px 0 60px;
+}/*# sourceMappingURL=fair-play.min.css.map */
